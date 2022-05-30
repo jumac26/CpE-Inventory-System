@@ -1,0 +1,85 @@
+body{
+    background: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;              
+}
+.update_container{
+    width: 300px;
+    height: 220px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 30px 10px 30px;
+    font-size: 16px;
+    box-shadow: 0px 20px 45px 0px rgba(128, 127, 127, 0.37);
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+h3{
+    color: maroon;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 3px solid maroon;
+    padding-bottom: 20px;
+}
+input#penalty{
+    border: none;
+    border: 1px solid maroon;
+    margin-left: 5%;
+    margin-top: 15px;
+    width: 85%;
+    padding: 8px;
+    border-radius: 5px;
+}
+input.cancel{
+    margin-left: 50%;
+    background-color: rgb(241, 234, 234);
+    color: maroon;
+}
+input.cancel:hover{
+    border: 2px solid maroon;
+}
+input.update{
+    margin-left: 5px;
+    background-color: maroon;
+    color: white;
+}
+input.update:hover{
+    border: 2px solid rgb(179, 24, 24);
+}
+input.update, input.cancel{
+    outline: none;
+    border: none;
+    padding: 5px;
+    width: 65px;
+    height: 35px;
+    margin-top: 15px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    border: 1px solid maroon;
+}
+/* For entering inputs, to remove the default blue background and to remove the default black outline */
+input:focus {
+    outline: 0 !important;
+}
+::-webkit-input-placeholder{
+transition:opacity .5s ease-in-out;
+}
+:focus::-webkit-input-placeholder{
+    opacity:0.5;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    box-shadow: 0 0 0 30px rgba(255, 246, 246, 0.877) inset !important;
+}
+select#item_name.popup, select#student_penalty.popup{
+    border: 1px solid maroon;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0;
+    outline: none;
+    width:  75%;
+    padding: 8px;
+}

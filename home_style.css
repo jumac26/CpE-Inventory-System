@@ -1,0 +1,397 @@
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: rgb(241, 234, 234);
+}
+
+/* Header */
+header{
+    display: flex;
+    margin: 0 0;
+    width: 100%;
+    max-height: 90px;
+    background-color: maroon;
+    color: white;
+    align-items: center;    
+}
+    /* Header contents */
+    /* Left: Logo and Website Name */
+    .header_left{
+        width: 80%;
+    }
+        img{
+            float: left;
+            width: 70px;
+            margin: 10px;
+            margin-left: 30px;
+        }
+        #website_name{
+            padding: 10px 0;
+            font-weight: bold;
+            font-size: 15px;
+        }
+    /* Right: Logout Button */
+    .header_right{
+        width:20%;
+        height: 90px;
+    }
+        button#logout{
+            width: 100px;
+            float: right;
+            margin-right: 25px;
+            margin-bottom: 25px;
+            background: none;
+            border: none;   
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            outline: none;
+            height: 100%;
+        }
+        button#logout:hover{
+            padding-top: 5px;
+            background-color: rgba(255, 255, 255, 0.062);
+            border-bottom: 4px solid white;
+        }
+
+    /* Body */
+    .content{
+        width: 100%;
+    }
+    .tab_contents{
+        margin-top: 50px;
+    }
+    /* Categories */
+    .summary, .inventory{
+        margin: 0 auto;
+        width: 70%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.685);
+        padding: 10px 30px 40px 30px;
+        margin-top: 0;
+        margin-bottom: 50px;
+        font-size: 16px;
+        box-shadow: 0px 20px 45px 0px rgba(128, 127, 127, 0.37);    
+        overflow-x: auto;
+    }
+    /* Headers of each categories*/
+    .h_categories{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 2px solid maroon;
+    }
+      
+    /* Add Button Div*/
+    .inventory_addbutton{
+        background-color: none;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+        /* Add Button Button*/    
+        .add_button {
+            width: 40px;
+            height: 40px;
+            background-color: maroon;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            color: white;
+            padding: 4px 9px 12px 9px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+        }
+        /* Add button: hover, focus or active */
+        .add_button:hover {
+            background-color: rgb(158, 26, 26);
+        }
+        .add_button:focus, .add_button:active{
+            outline: none;
+        }
+
+    
+    /* Table / Inventory List */
+    table {
+        border-collapse:collapse;
+        margin: auto; 
+        margin-top: 30px;
+        overflow-x: auto;
+    }    
+    td, th {
+        padding: 10px;
+        width: 110px;
+        height: 25px;
+    }    
+    th{
+        border-bottom: 3px solid maroon;
+        text-align: left;
+    }    
+    td{
+        width: 180px;
+        border-bottom: 1px solid rgba(128, 0, 0, 0.692);
+    }
+    /* Update button */
+    .update_in_button{
+        width: 70px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.685);
+        border: 1px solid maroon;
+        color: black;
+        outline: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+/* POPUP FORMS: ADD INVENTORY AND UPDATE BUTTON */
+/* Overlay when the add button is clicked  */
+.overlay, .overlay_2{
+    background: rgb(0, 0, 0, 0.6);
+    width: 100%;
+    height: 150vh;  
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+/* Popup Forms: New Inventory and Update */
+.new_inventory, .update_form{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 30px 10px 30px;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-size: 16px;
+    box-shadow: 0px 20px 45px 0px rgba(128, 127, 127, 0.37);
+    position: relative;
+}
+.update_form{
+    width: 25%;
+}
+/* Popup form header */
+.popup_header{
+    color: maroon;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 3px solid maroon;
+    padding-bottom: 20px;
+}
+
+/* Inventory Form Required Inputs */
+.inputs_popup{
+    display: flex;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 100%;
+}
+.left, .right{
+    width: 400px;
+}
+input.popup, select#item_name.popup, select#student_section.popup {
+    border: 1px solid maroon;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0;
+    outline: none;
+    width:  80%;
+    padding: 8px;
+}
+select#item_name.popup, select#student_section.popup{
+    width: 85%;
+}
+/* Add and cancel buttons */
+.popup_buttons{
+    margin-top: 20px;
+    margin-left: 73%;
+    position: relative;
+}
+button#add, button#close{
+    outline:none;
+    padding: 10px;
+    width: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Add button */
+button#add{
+    background-color: maroon;
+    color: white;
+    border: none;
+    margin-left: 10px;
+}
+/* Close button */
+button#close{
+    background-color: rgb(241, 234, 234);
+    color: maroon;
+    border: 1px solid maroon;
+    transition: all 200ms;
+}
+
+/* Update Form */
+.to_be_updated{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100%;
+}
+.update_form_buttons{
+    margin-top: 15px;
+    margin-left: 45%;
+    position: relative;
+}
+/* Add button */
+button#update, button#cancel{
+    outline: none;
+    border: none;
+    padding: 5px;
+    width: 65px;
+    margin-left: 5px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Update Button */
+button#update{
+    background-color: maroon;
+    color: white;
+}
+/* Close button */
+button#cancel{
+    background-color: rgb(241, 234, 234);
+    color: maroon;
+    border: 1px solid maroon;
+    transition: all 200ms;
+}
+
+
+/* For entering inputs, to remove the default blue background */
+input:focus {
+    outline: 0 !important;
+}
+
+::-webkit-input-placeholder{
+   transition:opacity .5s ease-in-out;
+}
+
+:focus::-webkit-input-placeholder{
+    opacity:0.5;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    box-shadow: 0 0 0 30px rgba(255, 246, 246, 0.877) inset !important;
+}
+
+/* Resizing the window */
+@media screen and (max-width:1170px) {
+    .popup_buttons{
+        margin-top: 20px;
+        margin-left: 70%;
+        position: relative;
+    }
+}
+@media screen and (max-width:1082px) {
+    .to_be_updated{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    button#update, button#cancel{
+        float: right;
+        margin-bottom: 10px;
+    }
+}   
+@media screen and (max-width:1075px) {
+    button#add, button#close{
+        float: right;
+        margin-bottom: 10px;
+    }
+}    
+@media screen and (max-width:1040px) {
+    table{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width:900px) {
+    table{
+        font-size: 11px;
+    }
+}  
+@media screen and (max-width:600px) {
+    header{
+        height:60px;
+    }
+    img{
+        padding-top: 10px;
+        margin-left: 20px   ;
+        width: 40px;
+    }
+    #website_name{
+        font-weight: bold;
+        font-size: 12px;
+    }
+    .header_right{
+        margin-right: 0;
+        padding-right: 10px;
+    }
+    button#logout{
+        width: 80px;
+        margin-right: 0;
+        font-size: 13px;
+    }
+    button#logout:hover{
+        padding-top: 18px;
+        height: 75px;
+        border-bottom: 2px solid white;
+    }
+   
+    /* Body */
+    .content{
+        width: 100%;
+    }
+    .tab_contents{
+        margin-top: 30px;
+    }
+    .summary, .inventory{
+        padding: 8px 15px 20px 15px;
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-size: 13px;
+    }
+    /* Headers of each categories*/
+    .h_categories{
+        padding-bottom: 10px;
+        border-bottom: 2px solid maroon;
+        margin-bottom: 30px;
+        font-size: 14px;            
+    }
+   
+    /* Table */
+    table {
+        border-collapse:collapse;
+        margin: auto; 
+        margin-top: 30px;
+    }    
+    td, th {
+        padding: 10px;
+        width: 110px;
+        height: 25px;
+    }    
+    th{
+        border-bottom: 3px solid maroon;
+        text-align: left;
+    }    
+    td{
+        width: 180px;
+        border-bottom: 1px solid rgba(128, 0, 0, 0.692);
+    }
+} 
